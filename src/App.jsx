@@ -5,6 +5,9 @@ import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { SkillsSection } from "./components/SkillsSection";
+
+
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -18,6 +21,7 @@ function App() {
       <Navbar />
 
       <Hero />
+      <SkillsSection />
       <Projects />
       <Contact />
 

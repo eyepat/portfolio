@@ -22,14 +22,15 @@ export const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
+     
       <motion.div
         className="logo"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        Portfolio
+        Bahaa <span className="lg">Portfolio</span>
       </motion.div>
-
+    
       <motion.ul
         className="nav-links"
         variants={staggerContainer}
@@ -43,6 +44,13 @@ export const Navbar = () => {
         >
           <a href="#home"> Home</a>
         </motion.li>
+         <motion.li
+          variants={fadeInUp}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+        >
+        <a href="#skills"> Skills</a>
+        </motion.li>
         <motion.li
           variants={fadeInUp}
           whileHover={{ scale: 1.1 }}
@@ -50,6 +58,7 @@ export const Navbar = () => {
         >
           <a href="#projects"> Projects</a>
         </motion.li>
+       
         <motion.li
           variants={fadeInUp}
           whileHover={{ scale: 1.1 }}
