@@ -9,6 +9,7 @@ const fadeInUp = {
 };
 
 const staggerContainer = {
+  initial: {},
   animate: {
     transition: {
       staggerChildren: 0.1,
@@ -17,22 +18,17 @@ const staggerContainer = {
 };
 
 const skills = [
-  // Frontend 
   { name: "HTML/CSS", level: 85, category: "frontend" },
   { name: "JavaScript", level: 80, category: "frontend" },
   { name: "TypeScript", level: 70, category: "frontend" },
   { name: "React", level: 80, category: "frontend" },
   { name: "MVC", level: 90, category: "frontend" },
-
-  // Backend
   { name: "Java", level: 90, category: "backend" },
   { name: "C", level: 80, category: "backend" },
   { name: "MySQL", level: 80, category: "backend" },
   { name: "MongoDB", level: 90, category: "backend" },
   { name: "PostgreSQL", level: 80, category: "backend" },
   { name: "Node.js", level: 80, category: "backend" },
-
-  // Tools
   { name: "Git/Github", level: 95, category: "tools" },
   { name: "Docker", level: 85, category: "tools" },
   { name: "Keycloak", level: 90, category: "tools" },
@@ -40,29 +36,32 @@ const skills = [
   { name: "Scrum", level: 75, category: "tools" },
   { name: "VS Code", level: 95, category: "tools" },
   { name: "IntelliJ IDEA", level: 96, category: "tools" },
-
-  // Soft Skills
-  { name: "Problem-solving", level: 85, category: "Soft Skills" },
-  { name: "TeamWork", level: 95, category: "Soft Skills" },
-  { name: "adaptability", level: 95, category: "Soft Skills" },
+  { name: "Problem-solving", level: 85, category: "soft skills" },
+  { name: "TeamWork", level: 95, category: "soft skills" },
+  { name: "Adaptability", level: 95, category: "soft skills" },
 ];
 
-const categories = ["all", "frontend", "backend", "tools", "Soft Skills"];
+const categories = ["all", "frontend", "backend", "tools", "soft skills"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 
   const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
+    (skill) =>
+      activeCategory === "all" ||
+      skill.category.toLowerCase() === activeCategory.toLowerCase()
   );
+
+  // Debug logging
+  console.log("Active Category:", activeCategory);
+  console.log("Filtered Skills:", filteredSkills);
 
   return (
     <motion.section
       id="skills"
-      className="skills-section"
+      className="skills"
       initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
+      animate="animate"
       variants={staggerContainer}
     >
       <div className="skills-container">
@@ -84,9 +83,19 @@ export const SkillsSection = () => {
           ))}
         </motion.div>
 
-        <motion.div className="skills-list" variants={staggerContainer}>
-          {filteredSkills.map((skill, index) => (
-            <motion.div key={index} className="skill-item" variants={fadeInUp}>
+        <motion.div
+          className="skills-list"
+          variants={staggerContainer}
+          initial="initial"
+          animate="animate"
+          key={activeCategory} 
+        >
+          {filteredSkills.map((skill) => (
+            <motion.div
+              key={skill.name} 
+              className="skill-item"
+              variants={fadeInUp}
+            >
               <h3 className="skill-name">{skill.name}</h3>
               <div className="skill-bar">
                 <div

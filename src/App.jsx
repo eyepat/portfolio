@@ -6,6 +6,7 @@ import { Contact } from "./components/Contact";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SkillsSection } from "./components/SkillsSection";
+import emailjs from "@emailjs/browser"
 
 
 
@@ -14,6 +15,7 @@ function App() {
 
   useEffect(() => {
     setIsLoaded(true);
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   }, []);
 
   return (
