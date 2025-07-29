@@ -101,6 +101,65 @@ body {
 .nav-links a:hover::after {
   width: 100%;
 }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+
+.bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+.bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+.nav-links.mobile {
+  position: absolute;
+  top: 100%;
+  right: 5%;
+  background: var(--nav-bg);
+  list-style: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 999;
+}
+
+.nav-links.mobile a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+
+@media (max-width: 768px) {
+  .nav-links.desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
 
 /* Hero Section */
 .hero {
@@ -656,3 +715,5 @@ transition: 0.5s;
   color: var(--text-color);
   border-top: 1px solid var(--card-border) ;
 }
+
+
