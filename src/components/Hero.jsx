@@ -78,7 +78,7 @@ export const Hero = () => {
             <motion.a href = "https://www.linkedin.com/in/bahaa-hamed-9424111a9" target="_blank" title="Linkedin" >
               <i className="fab fa-linkedin"></i>
             </motion.a>
-            <motion.a href="/EnglishMYCV.pdf" download title="CV">
+            <motion.a href="/CV-EN.pdf" download title="CV">
               <i className="fas fa-download"></i>
             </motion.a>
            
