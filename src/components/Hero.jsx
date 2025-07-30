@@ -72,11 +72,14 @@ export const Hero = () => {
           className="social-links"
           variants={staggerContainer}
           >
-            <motion.a href = "https://github.com/eyepat"  target="_blank">
+            <motion.a href = "https://github.com/eyepat"  target="_blank" title="Github">
               <i className="fab fa-github"></i>
             </motion.a>
-            <motion.a href = "https://www.linkedin.com/in/bahaa-hamed-9424111a9" target="_blank" >
+            <motion.a href = "https://www.linkedin.com/in/bahaa-hamed-9424111a9" target="_blank" title="Linkedin" >
               <i className="fab fa-linkedin"></i>
+            </motion.a>
+            <motion.a href="/EnglishMYCV.pdf" download title="CV">
+              <i className="fas fa-download"></i>
             </motion.a>
            
 
