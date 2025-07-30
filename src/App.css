@@ -457,13 +457,17 @@ transition: 0.5s;
   background: var(--nav-bg); 
   position: relative;
 }
+.projects a {
+  text-decoration: none;
+
+}
 .projects::before{
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     90deg,
     transparent,
@@ -492,6 +496,7 @@ transition: 0.5s;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 .project-card {
@@ -504,6 +509,7 @@ transition: 0.5s;
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;    
 }
 
 .project-card::before {
@@ -597,18 +603,20 @@ transition: 0.5s;
   background: var(--section-bg);
   position: relative;
 }
-.contact::before{
+.contact::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
+  left: 0%;
+  right: 0%;
+  height: 2px; 
   background: linear-gradient(
     90deg,
     transparent,
-    var(--accent-color)
-    ,transparent);
+    var(--light-text),
+    transparent
+  );
+  z-index: 0;
 }
 .contact h2 {
   text-align: center;

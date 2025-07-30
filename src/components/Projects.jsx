@@ -15,7 +15,6 @@ const staggerContainer = {
 };
 
 export const Projects = () => {
-    
   return (
     <motion.section
       id="projects"
@@ -25,9 +24,9 @@ export const Projects = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-       <h2 className="projects-title">
-          My <span className="pj">Projects</span>
-        </h2>
+      <h2 className="projects-title">
+        My <span className="pj">Projects</span>
+      </h2>
       <motion.div
         className="project-grid"
         variants={staggerContainer}
@@ -35,87 +34,138 @@ export const Projects = () => {
         whileInView="animate"
         viewport={{ once: true }}
       >
-        <motion.div
-          className="project-card"
-          variants={fadeInUp}
-          whileHover={{ y: -10, transition: { duration: 0.2 } }}
+        {/* WAITAPP AdminPanel */}
+        <a
+          href="https://github.com/Wait-app-KTH/Admin-Panel-for-Wait-App-Patient-Overview-System-for-KI"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <motion.div
-            className="project-image"
-            style={{ backgroundImage: "url('/projects/waitApp.png')" }}
-            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-          />
-          <h3> Admin Panel for Patient Overview System</h3>
-          <p>
-            Developed an admin panel for patient data management with secure authentication, REST APIs, and real-time blood pressure charts featuring search and sort functionality.
-          </p>
-          <div className="project-tech">
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>java</span>
-                <span>Keycloak</span>
-                <span>PostgreSQL</span>
-                <span>Docker</span>
-          </div>
-        </motion.div>
+            className="project-card"
+            variants={fadeInUp}
+            whileHover={{ y: -10, transition: { duration: 0.2 } }}
+          >
+            <motion.div
+              className="project-image"
+              style={{ backgroundImage: "url('/projects/waitApp.png')" }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+            />
+            <h3> Admin Panel for Patient Overview System</h3>
+            <p>
+              Developed an admin panel for patient data management with secure authentication,
+              REST APIs, and real-time blood pressure charts featuring search and sort functionality.
+            </p>
+            <div className="project-tech">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Java</span>
+              <span>Keycloak</span>
+              <span>PostgreSQL</span>
+              <span>Docker</span>
+            </div>
+          </motion.div>
+        </a>
 
-        <motion.div
-          className="project-card"
-          variants={fadeInUp}
-          whileHover={{ y: -10, transition: { duration: 0.2 } }}
+        {/* BALL BRAWL */}
+        <a
+          href="https://github.com/eyepat/Ball-Brawl-Network-Based-2D-Multiplayer-Game"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <motion.div
-            className="project-image"
-            style={{
-              backgroundImage: "url('/projects/BallBrawl.png')",
-            }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          />
-          <h3>Ball Brawl  Network Based 2D Multiplayer Game</h3>
-          <p>
-            Developed a 2D multiplayer soccer game for
-             up to four players, 
-             implementing game mechanics and MVC 
-             architecture to create a stable,
+            className="project-card"
+            variants={fadeInUp}
+            whileHover={{ y: -10, transition: { duration: 0.2 } }}
+          >
+            <motion.div
+              className="project-image"
+              style={{ backgroundImage: "url('/projects/BallBrawl.png')" }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            />
+            <h3>Ball Brawl Network Based 2D Multiplayer Game</h3>
+            <p>
+              Developed a 2D multiplayer soccer game for up to four players,
+              implementing game mechanics and MVC architecture to create a stable,
               responsive prototype.
+            </p>
+            <div className="project-tech">
+              <span>C</span>
+              <span>SDL2</span>
+              <span>TCP/IP</span>
+              <span>MVC</span>
+              <span>Scrum</span>
+            </div>
+          </motion.div>
+        </a>
 
-          </p>
-          <div className="project-tech">
-            <span>C</span>
-            <span>SDL2</span>
-            <span>TCP/IP</span>
-            <span>MVC</span>
-            <span> Scrum</span>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="project-card"
-          variants={fadeInUp}
-          whileHover={{ y: -10, transition: { duration: 0.2 } }}
+        {/* DRIVE MY KIDS */}
+        <a
+          href="https://www.figma.com/proto/HG7tJttXo9bKuRJryqK8Df/Bahaa-Drive-my-Kid?node-id=2325-87&starting-point-node-id=2325%3A87&t=VL0Qp1qklb6Zmr7a-1"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <motion.div
-            className="project-image"
-            style={{
-              backgroundImage: "url('/projects/DriveMyKids.png')",
-            }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          />
-          <h3>Drive My Kid – Carpooling Prototype for Children</h3>
-          <p>
-           Designed a mobile app for parental carpooling using Figma, 
-           incorporating user testing and needs analysis to create 
-           a clickable prototype with intuitive UI and built-in safety features.
-          </p>
-          <div className="project-tech">
-            <span>Figma</span>
-            <span>UX Research</span>
-            <span>Usability Testing</span>
-            <span>Design Thinking</span>
-          </div>
-        </motion.div>
+            className="project-card"
+            variants={fadeInUp}
+            whileHover={{ y: -10, transition: { duration: 0.2 } }}
+          >
+            <motion.div
+              className="project-image"
+              style={{ backgroundImage: "url('/projects/DriveMyKids.png')" }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            />
+            <h3>Drive My Kid – Carpooling Prototype for Children</h3>
+            <p>
+              Designed a mobile app for parental carpooling using Figma,
+              incorporating user testing and needs analysis to create a clickable prototype
+              with intuitive UI and built-in safety features.
+            </p>
+            <div className="project-tech">
+              <span>Figma</span>
+              <span>UX Research</span>
+              <span>Usability Testing</span>
+              <span>Design Thinking</span>
+            </div>
+          </motion.div>
+          
+        </a>
+
+         {/* Eyepat-Combat */}
+        <a
+          href="https://github.com/eyepat/Eyepat-Combat-game.git"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <motion.div
+            className="project-card"
+            variants={fadeInUp}
+            whileHover={{ y: -10, transition: { duration: 0.2 } }}
+          >
+            <motion.div
+              className="project-image"
+              style={{ backgroundImage: "url('/projects/EyePat-Combat.png')" }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+            />
+            <h3> Eyepat-Combat 2D Fighting Game (High School Project)</h3>
+            <p>
+              Created a 2D fighting game in Unity inspired by Mortal Kombat, 
+              featuring character animations, health bars, attack combos, and game UI.
+               This project sparked my passion for game development and helped me understand visual effects, 
+               hit detection, and combat mechanics.
+            </p>
+            <div className="project-tech">
+              <span>Unity</span>
+              <span>ASP.NET</span>
+              <span>2D Animation</span>
+              <span>Game Physics</span>
+              <span>UI Design</span>
+              
+            
+            </div>
+          </motion.div>
+        </a>
       </motion.div>
     </motion.section>
   );
