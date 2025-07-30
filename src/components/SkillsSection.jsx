@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-// Animation variants
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -18,27 +17,31 @@ const staggerContainer = {
 };
 
 const skills = [
-  { name: "HTML/CSS", level: 85, category: "frontend" },
-  { name: "JavaScript", level: 80, category: "frontend" },
-  { name: "TypeScript", level: 70, category: "frontend" },
-  { name: "React", level: 80, category: "frontend" },
-  { name: "MVC", level: 90, category: "frontend" },
-  { name: "Java", level: 90, category: "backend" },
-  { name: "C", level: 80, category: "backend" },
-  { name: "MySQL", level: 80, category: "backend" },
-  { name: "MongoDB", level: 90, category: "backend" },
-  { name: "PostgreSQL", level: 80, category: "backend" },
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "Git/Github", level: 95, category: "tools" },
-  { name: "Docker", level: 85, category: "tools" },
-  { name: "Keycloak", level: 90, category: "tools" },
-  { name: "Figma", level: 75, category: "tools" },
-  { name: "Scrum", level: 75, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
-  { name: "IntelliJ IDEA", level: 96, category: "tools" },
-  { name: "Problem-solving", level: 85, category: "soft skills" },
-  { name: "TeamWork", level: 95, category: "soft skills" },
-  { name: "Adaptability", level: 95, category: "soft skills" },
+  /*Frontend list*/
+    { name: "HTML/CSS", level: 85, category: "frontend" },
+    { name: "JavaScript", level: 80, category: "frontend" },
+    { name: "TypeScript", level: 70, category: "frontend" },
+    { name: "React", level: 80, category: "frontend" },
+    { name: "MVC", level: 90, category: "frontend" },
+  /*Backend list*/
+    { name: "Java", level: 90, category: "backend" },
+    { name: "C", level: 80, category: "backend" },
+    { name: "MySQL", level: 80, category: "backend" },
+    { name: "MongoDB", level: 90, category: "backend" },
+    { name: "PostgreSQL", level: 80, category: "backend" },
+    { name: "Node.js", level: 80, category: "backend" },
+  /*Tools list*/
+    { name: "Git/Github", level: 95, category: "tools" },
+    { name: "Docker", level: 85, category: "tools" },
+    { name: "Keycloak", level: 90, category: "tools" },
+    { name: "Figma", level: 75, category: "tools" },
+    { name: "Scrum", level: 75, category: "tools" },
+    { name: "VS Code", level: 95, category: "tools" },
+    { name: "IntelliJ IDEA", level: 96, category: "tools" },
+  /*Soft Skills list*/
+      { name: "Problem-solving", level: 85, category: "soft skills" },
+      { name: "TeamWork", level: 95, category: "soft skills" },
+      { name: "Adaptability", level: 95, category: "soft skills" },
 ];
 
 const categories = ["all", "frontend", "backend", "tools", "soft skills"];
@@ -52,7 +55,6 @@ export const SkillsSection = () => {
       skill.category.toLowerCase() === activeCategory.toLowerCase()
   );
 
-  // Debug logging
   console.log("Active Category:", activeCategory);
   console.log("Filtered Skills:", filteredSkills);
 

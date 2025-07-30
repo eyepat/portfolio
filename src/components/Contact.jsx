@@ -98,11 +98,7 @@ export const Contact = () => {
       >
         Get in <span className="touch"> Touch </span>
       </motion.h2>
-
-
-
-
-
+      
       <motion.div className="contact-content" variants={fadeInUp}>
         <motion.form className="contact-form" onSubmit={handleSubmit}>
           <motion.input

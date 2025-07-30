@@ -149,7 +149,6 @@ body {
   font-size: 1.2rem;
 }
 
-
 @media (max-width: 768px) {
   .nav-links.desktop {
     display: none;
@@ -159,7 +158,6 @@ body {
     display: flex;
   }
 }
-
 
 /* Hero Section */
 .hero {

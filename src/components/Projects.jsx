@@ -17,9 +17,7 @@ const staggerContainer = {
 export const Projects = () => {
     
   return (
-    
     <motion.section
-    
       id="projects"
       className="projects"
       initial={{ opacity: 0 }}
@@ -27,8 +25,6 @@ export const Projects = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-
- 
        <h2 className="projects-title">
           My <span className="pj">Projects</span>
         </h2>
@@ -49,7 +45,7 @@ export const Projects = () => {
             style={{ backgroundImage: "url('/projects/waitApp.png')" }}
             whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
           />
-          <h3>  Admin Panel for Patient Overview System</h3>
+          <h3> Admin Panel for Patient Overview System</h3>
           <p>
             Developed an admin panel for patient data management with secure authentication, REST APIs, and real-time blood pressure charts featuring search and sort functionality.
           </p>
