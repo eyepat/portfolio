@@ -1,0 +1,38 @@
+@keyframes mroll {
+  to { transform: translateX(-50%); }
+}
+
+.strip {
+  background: var(--color-card);
+  border-top: 1px solid var(--color-border);
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: mroll 34s linear infinite;
+}
+
+.item {
+  white-space: nowrap;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-body);
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  display: inline-block;
+}

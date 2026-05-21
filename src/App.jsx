@@ -1,42 +1,34 @@
-import "./App.css";
-import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { Projects } from "./components/Projects";
-import { Contact } from "./components/Contact";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { SkillsSection } from "./components/SkillsSection";
-import emailjs from "@emailjs/browser"
+import { Cursor } from './components/Cursor/Cursor';
+import { Nav }    from './components/Nav/Nav';
+import { Marquee } from './components/Marquee/Marquee';
+import { Hero }    from './sections/Hero/Hero';
+import { About }   from './sections/About/About';
+import { Projects } from './sections/Projects/Projects';
+import { Skills }   from './sections/Skills/Skills';
+import { Stats }    from './sections/Stats/Stats';
+import { Contact }  from './sections/Contact/Contact';
+import { Footer }   from './sections/Footer/Footer';
+import { useScrollReveal }  from './hooks/useScrollReveal';
+import { useActiveSection } from './hooks/useActiveSection';
 
+const SECTION_IDS = ['home', 'about', 'projects', 'skills', 'contact'];
 
-
-function App() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
-  }, []);
+export default function App() {
+  useScrollReveal();
+  const activeSection = useActiveSection(SECTION_IDS);
 
   return (
-    <div className={`app ${isLoaded ? "loaded" : ""}`}>
-      <Navbar />
+    <>
+      <Cursor />
+      <Nav activeSection={activeSection} />
       <Hero />
-      <SkillsSection />
+      <About />
       <Projects />
+      <Skills />
+      <Stats />
       <Contact />
-
-      <motion.footer
-        className="footer"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <p> &copy; 2025 BahaaTech. All rights reserved.</p>
-      </motion.footer>
-    </div>
+      <Marquee />
+      <Footer />
+    </>
   );
 }
-
-export default App;

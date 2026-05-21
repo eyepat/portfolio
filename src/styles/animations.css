@@ -1,0 +1,32 @@
+@keyframes blobPulse {
+  0%, 100% { transform: translateY(-50%) scale(1); opacity: 1; }
+  50%       { transform: translateY(-50%) scale(1.18); opacity: 0.65; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes eclick {
+  0%   { transform: translateY(-8px) scale(1); }
+  30%  { transform: translateY(-8px) scale(0.96); }
+  65%  { transform: translateY(-8px) scale(1.03); }
+  100% { transform: translateY(-8px) scale(1); }
+}
+
+@keyframes sPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(1.6); }
+}
+
+@keyframes mroll {
+  to { transform: translateX(-50%); }
+}
+
+.eclick { animation: eclick 0.5s ease; }

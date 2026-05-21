@@ -1,0 +1,7 @@
+.flash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  transition: background 0.08s;
+}

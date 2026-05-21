@@ -1,12 +1,52 @@
-# React + Vite
+# Bahaa Hamed — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website for Bahaa Hamed, Computer Science & Economics graduate from KTH (2026).
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** — component architecture
+- **Vite 7** — build tool & dev server
+- **CSS Modules** — scoped, zero-conflict styles
+- **Custom hooks** — scroll reveal, active section tracking
+- **Vanilla JS** — 3D tilt + flashlight effects, cursor animation
 
-## Expanding the ESLint configuration
+## Local Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Visit `http://localhost:5173`
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Folder Structure
+
+```
+src/
+├── styles/          # Global CSS (variables, animations, utilities)
+├── hooks/           # Reusable React hooks
+├── components/      # Shared UI components (Cursor, Nav, Marquee, TiltCard)
+└── sections/        # Page sections (Hero, About, Projects, Skills, Stats, Contact, Footer)
+    └── Projects/
+        └── projects.data.js   # All project content
+    └── Skills/
+        └── skills.data.js     # All skills content
+```
+
+## Deploy (Vercel)
+
+1. Push to GitHub
+2. Import repo at [vercel.com](https://vercel.com)
+3. Framework preset: **Vite**
+4. Build command: `npm run build`
+5. Output directory: `dist`
+6. Click **Deploy**
+
+No environment variables required for the base portfolio.
