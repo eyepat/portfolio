@@ -21,7 +21,7 @@ export function Contact() {
           <a href="https://github.com/eyepat" target="_blank" rel="noopener noreferrer" className={styles.socialBtn} title="GitHub">
             <i className="fab fa-github" />
           </a>
-          <a href="/CV-EN.pdf" download className={styles.socialBtn} title="Download CV">
+          <a href="/Bahaa_Hamed_CV_EN.pdf" download className={styles.socialBtn} title="Download CV">
             <i className="fas fa-download" />
           </a>
         </div>
