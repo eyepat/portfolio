@@ -7,6 +7,7 @@ export const PROJECTS = [
     title:       'Archivon',
     description: 'A production-grade AI documentation pipeline built as my thesis project at KTH in collaboration with Epinova. Ingests development activity from GitHub and Azure DevOps, generates vector embeddings, and surfaces intelligent feature summaries through a dual-protocol API (REST + MCP). Two independent ASP.NET Core services deployed on Azure App Service with full CI/CD.',
     tags:        ['RAG', 'Azure OpenAI', 'pgvector', 'C#', '.NET 10', 'Docker', 'MCP Protocol', 'PostgreSQL', 'Azure DevOps'],
+    caseStudyUrl: '/archivon.html',
     image:       '/assets/img/archivon.png',
     imageAlt:    'Archivon architecture diagram',
     reversed:    false,

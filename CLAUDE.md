@@ -15,7 +15,7 @@ No test suite. Deployed on Vercel (framework preset: Vite, output `dist/`); push
 
 ## Architecture
 
-Single-page React 19 + Vite portfolio. No router, no state library, no UI framework — sections stack in `src/App.jsx` and anchor links (`#home`, `#about`, `#journey`, `#projects`, `#skills`, `#contact`) drive navigation. Live at https://portfolio-mu-weld-72.vercel.app (also referenced by the OG tags in `index.html` — update those if the domain changes).
+React 19 + Vite portfolio. No router, no state library, no UI framework — sections stack in `src/App.jsx` and anchor links (`#home`, `#about`, `#journey`, `#projects`, `#skills`, `#contact`) drive navigation. Extra pages are Vite MPA entries, not routes: `archivon.html` → `src/case-study/` is the Archivon case study, registered in `vite.config.js` `rollupOptions.input` (`vercel.json` `cleanUrls` makes it `/archivon` in production). Live at https://portfolio-mu-weld-72.vercel.app (also referenced by the OG tags in `index.html` — update those if the domain changes).
 
 ### Render gating (App.jsx)
 
