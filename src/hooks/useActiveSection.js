@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
-export function useActiveSection(sectionIds) {
+export function useActiveSection(sectionIds, ready = true) {
   const [active, setActive] = useState('');
 
   useEffect(() => {
+    if (!ready) return undefined;
     const obs = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); }),
       { threshold: 0.45 }
@@ -13,7 +14,7 @@ export function useActiveSection(sectionIds) {
       if (el) obs.observe(el);
     });
     return () => obs.disconnect();
-  }, [sectionIds]);
+  }, [sectionIds, ready]);
 
   return active;
 }

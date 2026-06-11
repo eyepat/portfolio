@@ -29,8 +29,8 @@ export function Cursor() {
       raf = requestAnimationFrame(loop);
     }
 
-    const onEnter = e => { if (e.target.closest('a, button, [data-tilt]')) document.body.classList.add('ch'); };
-    const onLeave = e => { if (e.target.closest('a, button, [data-tilt]')) document.body.classList.remove('ch'); };
+    const onEnter = e => { if (e.target instanceof Element && e.target.closest('a, button, [data-tilt]')) document.body.classList.add('ch'); };
+    const onLeave = e => { if (e.target instanceof Element && e.target.closest('a, button, [data-tilt]')) document.body.classList.remove('ch'); };
 
     document.addEventListener('mousemove', onMove);
     document.addEventListener('mouseenter', onEnter, true);

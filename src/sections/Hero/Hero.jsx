@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import styles from './Hero.module.css';
 import { Magnetic } from '../../components/Magnetic/Magnetic';
+import { Particles } from '../../components/Particles/Particles';
+import { Scramble } from '../../components/Scramble/Scramble';
 
 export function Hero() {
   const photoRef = useRef(null);
@@ -37,12 +39,13 @@ export function Hero() {
   return (
     <section className={styles.hero} id="home">
       <div className={styles.blob} />
+      <Particles />
       <div className={styles.inner}>
 
         <div className={styles.left}>
           <p className={styles.label}>
             <span className={styles.pulseDot} />
-            Computer Science &amp; Economics — KTH 2026
+            <Scramble text="Computer Science & Economics — KTH 2026" delay={500} />
           </p>
           <h1 className={styles.h1}>
             <span className={styles.lineMask}>
@@ -69,6 +72,7 @@ export function Hero() {
         <div className={styles.photo} ref={photoRef}>
           <div className={styles.portrait}>
             <img src="/assets/img/photo.png" alt="Bahaa Hamed" className={styles.portraitImg} />
+            <span className={styles.photoRing} />
           </div>
         </div>
 

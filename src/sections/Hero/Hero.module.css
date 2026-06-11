@@ -197,6 +197,35 @@
 .portrait::before { top: 18px; left: 18px; border-top-width: 2px; border-left-width: 2px; }
 .portrait::after  { bottom: 18px; right: 18px; border-bottom-width: 2px; border-right-width: 2px; }
 
+@property --ring-a {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes ringSpin {
+  to { --ring-a: 360deg; }
+}
+
+.photoRing {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  z-index: 2;
+  pointer-events: none;
+  background: conic-gradient(from var(--ring-a),
+    transparent 0deg,
+    rgba(0, 229, 204, 0.85) 35deg,
+    transparent 75deg,
+    transparent 360deg);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: ringSpin 7s linear infinite;
+}
+
 .portraitImg {
   width: 100%;
   height: 100%;
