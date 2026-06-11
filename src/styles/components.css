@@ -52,9 +52,26 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   border-radius: 4px;
-  transition: opacity 0.3s, transform 0.25s;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.25s;
 }
-.btn-fill:hover { opacity: 0.88; transform: translateY(-2px); }
+.btn-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+.btn-fill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 229, 204, 0.3);
+}
+.btn-fill:hover::after { left: 130%; }
 
 .btn-line {
   display: inline-flex;
@@ -70,9 +87,23 @@
   text-transform: uppercase;
   border: 1.5px solid var(--color-accent);
   border-radius: 4px;
-  transition: background 0.3s;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: box-shadow 0.3s;
 }
-.btn-line:hover { background: var(--color-accent-08); }
+.btn-line::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-accent-15);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-line:hover { box-shadow: 0 0 24px rgba(0, 229, 204, 0.12); }
+.btn-line:hover::before { transform: scaleX(1); }
 
 .btn-arrow {
   display: inline-flex;
@@ -95,10 +126,14 @@
 /* ── SCROLL REVEAL ───────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(30px) scale(0.99);
+  filter: blur(6px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s ease;
 }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal.visible { opacity: 1; transform: none; filter: none; }
 .rd1 { transition-delay: 0.1s; }
 .rd2 { transition-delay: 0.2s; }
 .rd3 { transition-delay: 0.3s; }

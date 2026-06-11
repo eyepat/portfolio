@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './TiltCard.module.css';
 
-export function TiltCard({ children, className, liftAmount }) {
+export function TiltCard({ children, className = '', liftAmount = -6 }) {
   const cardRef  = useRef(null);
   const flashRef = useRef(null);
 
@@ -62,9 +62,4 @@ TiltCard.propTypes = {
   children:   PropTypes.node.isRequired,
   className:  PropTypes.string,
   liftAmount: PropTypes.number,
-};
-
-TiltCard.defaultProps = {
-  className:  '',
-  liftAmount: -6,
 };

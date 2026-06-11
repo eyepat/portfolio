@@ -1,4 +1,3 @@
-import styles from './Skills.module.css';
 import { SkillCategory } from './SkillCategory';
 import { SKILL_CATEGORIES } from './skills.data';
 

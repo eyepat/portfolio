@@ -1,9 +1,10 @@
 import styles from './About.module.css';
+import { CountUp } from '../../components/CountUp/CountUp';
 
 const STATS = [
-  { num: '5', sup: '+', label: 'Projects delivered', delay: '' },
-  { num: '2', sup: '×', label: 'Independent services built', delay: 'rd1' },
-  { num: '1536', sup: '', label: 'Vector embedding dimensions', delay: 'rd2' },
+  { value: 5, sup: '+', label: 'Projects delivered', delay: '' },
+  { value: 2, sup: '×', label: 'Independent services built', delay: 'rd1' },
+  { value: 1536, sup: '', label: 'Vector embedding dimensions', delay: 'rd2' },
   { num: '∞', sup: '', label: 'Curiosity', delay: 'rd3', white: true },
 ];
 
@@ -23,7 +24,7 @@ export function About() {
             {STATS.map(s => (
               <div key={s.label} className={`reveal ${s.delay}`}>
                 <div className={styles.num} style={s.white ? { color: 'var(--color-white)' } : {}}>
-                  {s.num}
+                  {s.value != null ? <CountUp value={s.value} /> : s.num}
                   {s.sup && <span className={styles.sup}>{s.sup}</span>}
                 </div>
                 <div className={styles.lbl}>{s.label}</div>

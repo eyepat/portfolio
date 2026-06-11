@@ -12,19 +12,21 @@
   width: 6px;
   height: 6px;
   background: var(--color-accent);
+  box-shadow: 0 0 12px rgba(0, 229, 204, 0.7);
 }
 
 .ring {
   width: 32px;
   height: 32px;
   border: 1.5px solid rgba(0, 229, 204, 0.45);
-  transition: width 0.22s, height 0.22s, border-color 0.22s;
+  transition: width 0.22s, height 0.22s, border-color 0.22s, background 0.22s;
 }
 
 :global(body.ch) .ring {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-color: var(--color-accent);
+  background: rgba(0, 229, 204, 0.06);
 }
 
 @media (hover: none) {

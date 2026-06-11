@@ -1,4 +1,5 @@
 import { Cursor } from './components/Cursor/Cursor';
+import { Ambience } from './components/Ambience/Ambience';
 import { Nav }    from './components/Nav/Nav';
 import { Marquee } from './components/Marquee/Marquee';
 import { Hero }    from './sections/Hero/Hero';
@@ -20,6 +21,7 @@ export default function App() {
   return (
     <>
       <Cursor />
+      <Ambience />
       <Nav activeSection={activeSection} />
       <Hero />
       <About />
