@@ -1,0 +1,22 @@
+.ghost {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  z-index: 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(110px, 17vw, 240px);
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
+
+@media (max-width: 600px) {
+  .ghost { display: none; }
+}

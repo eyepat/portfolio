@@ -84,6 +84,12 @@
 /* Close button — hidden on desktop */
 .closeBtn { display: none; }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .burger {
   display: none;
   flex-direction: column;

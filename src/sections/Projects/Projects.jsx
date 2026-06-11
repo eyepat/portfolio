@@ -1,10 +1,12 @@
 import styles from './Projects.module.css';
 import { ProjectCard } from './ProjectCard';
 import { PROJECTS } from './projects.data';
+import { GhostTitle } from '../../components/GhostTitle/GhostTitle';
 
 export function Projects() {
   return (
     <section className="sec" id="projects">
+      <GhostTitle text="WORK" />
       <div className="wrap">
 
         <div className={styles.header}>

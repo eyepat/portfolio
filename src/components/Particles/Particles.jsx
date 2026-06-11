@@ -17,6 +17,11 @@ export function Particles() {
     let dots = [];
     const mouse = { x: -9999, y: -9999 };
 
+    const readAccent = () =>
+      getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim() || '0, 229, 204';
+    let accent = readAccent();
+    const onTheme = () => { accent = readAccent(); };
+
     function resize() {
       const rect = canvas.parentElement.getBoundingClientRect();
       dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -56,7 +61,7 @@ export function Particles() {
 
         ctx.beginPath();
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 229, 204, 0.5)';
+        ctx.fillStyle = `rgba(${accent}, 0.5)`;
         ctx.fill();
       }
 
@@ -69,7 +74,7 @@ export function Particles() {
             ctx.beginPath();
             ctx.moveTo(dots[i].x, dots[i].y);
             ctx.lineTo(dots[j].x, dots[j].y);
-            ctx.strokeStyle = `rgba(0, 229, 204, ${0.16 * (1 - dist / LINK_DIST)})`;
+            ctx.strokeStyle = `rgba(${accent}, ${0.16 * (1 - dist / LINK_DIST)})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
@@ -99,12 +104,14 @@ export function Particles() {
     resize();
     window.addEventListener('resize', resize);
     window.addEventListener('mousemove', onMove);
+    window.addEventListener('themechange', onTheme);
     document.addEventListener('mouseleave', onLeave);
     vis.observe(canvas);
 
     return () => {
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('themechange', onTheme);
       document.removeEventListener('mouseleave', onLeave);
       vis.disconnect();
       if (raf != null) cancelAnimationFrame(raf);

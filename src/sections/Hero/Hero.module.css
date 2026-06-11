@@ -1,4 +1,4 @@
-@keyframes blobPulse {
+﻿@keyframes blobPulse {
   0%, 100% { transform: translateY(-50%) scale(1); opacity: 1; }
   50%       { transform: translateY(-50%) scale(1.18); opacity: 0.65; }
 }
@@ -22,9 +22,9 @@
 }
 
 @keyframes pulseDot {
-  0%   { box-shadow: 0 0 0 0 rgba(0, 229, 204, 0.45); }
-  70%  { box-shadow: 0 0 0 9px rgba(0, 229, 204, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 229, 204, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0.45); }
+  70%  { box-shadow: 0 0 0 9px rgba(var(--accent-rgb), 0); }
+  100% { box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0); }
 }
 
 @keyframes floatY {
@@ -57,7 +57,7 @@
   position: absolute;
   width: 700px; height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 229, 204, 0.065) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.065) 0%, transparent 70%);
   top: 50%; right: -100px;
   transform: translateY(-50%);
   animation: blobPulse 7s ease-in-out infinite;
@@ -125,7 +125,7 @@
 .shimmer {
   background: linear-gradient(110deg,
     var(--color-accent) 0%,
-    #b8fff6 22%,
+    rgba(255, 255, 255, 0.92) 22%,
     var(--color-accent) 44%,
     var(--color-accent) 100%);
   background-size: 200% 100%;
@@ -165,7 +165,7 @@
   content: '';
   position: absolute;
   inset: -50px;
-  background: radial-gradient(circle at 50% 45%, rgba(0, 229, 204, 0.16) 0%, transparent 62%);
+  background: radial-gradient(circle at 50% 45%, rgba(var(--accent-rgb), 0.16) 0%, transparent 62%);
   filter: blur(22px);
   animation: glowPulse 6s ease-in-out infinite;
   pointer-events: none;
@@ -178,7 +178,7 @@
   border-radius: 20px;
   background: linear-gradient(155deg, #1c1c1c 0%, #111 100%);
   border: 1px solid var(--color-accent-25);
-  box-shadow: 0 0 90px rgba(0, 229, 204, 0.1), inset 0 0 30px rgba(0, 229, 204, 0.02);
+  box-shadow: 0 0 90px rgba(var(--accent-rgb), 0.1), inset 0 0 30px rgba(var(--accent-rgb), 0.02);
   overflow: hidden;
   position: relative;
   animation: floatY 7s ease-in-out infinite;
@@ -216,7 +216,7 @@
   pointer-events: none;
   background: conic-gradient(from var(--ring-a),
     transparent 0deg,
-    rgba(0, 229, 204, 0.85) 35deg,
+    rgba(var(--accent-rgb), 0.85) 35deg,
     transparent 75deg,
     transparent 360deg);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);

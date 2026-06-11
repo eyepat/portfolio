@@ -6,6 +6,7 @@ import { Nav }    from './components/Nav/Nav';
 import { Marquee } from './components/Marquee/Marquee';
 import { Hero }    from './sections/Hero/Hero';
 import { About }   from './sections/About/About';
+import { Journey } from './sections/Journey/Journey';
 import { Projects } from './sections/Projects/Projects';
 import { Skills }   from './sections/Skills/Skills';
 import { Stats }    from './sections/Stats/Stats';
@@ -14,7 +15,7 @@ import { Footer }   from './sections/Footer/Footer';
 import { useScrollReveal }  from './hooks/useScrollReveal';
 import { useActiveSection } from './hooks/useActiveSection';
 
-const SECTION_IDS = ['home', 'about', 'projects', 'skills', 'contact'];
+const SECTION_IDS = ['home', 'about', 'journey', 'projects', 'skills', 'contact'];
 
 // Show the intro once per tab session; never for reduced-motion users.
 const SKIP_INTRO =
@@ -49,6 +50,7 @@ export default function App() {
           <Nav activeSection={activeSection} />
           <Hero />
           <About />
+          <Journey />
           <Projects />
           <Skills />
           <Stats />

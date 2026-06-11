@@ -1,5 +1,7 @@
-/* ── SECTION ─────────────────────────────────────── */
-.sec { padding: 180px 0; }
+﻿/* ── SECTION ─────────────────────────────────────── */
+/* overflow-x: clip (not hidden) so GhostTitle is clipped without breaking split-sticky */
+.sec { padding: 180px 0; position: relative; overflow-x: clip; }
+.sec > .wrap { position: relative; z-index: 1; }
 .sec-dark { background: var(--color-card); }
 
 /* ── CHIP LABEL ──────────────────────────────────── */
@@ -69,7 +71,7 @@
 }
 .btn-fill:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(0, 229, 204, 0.3);
+  box-shadow: 0 8px 28px rgba(var(--accent-rgb), 0.3);
 }
 .btn-fill:hover::after { left: 130%; }
 
@@ -102,7 +104,7 @@
   transform-origin: left;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.btn-line:hover { box-shadow: 0 0 24px rgba(0, 229, 204, 0.12); }
+.btn-line:hover { box-shadow: 0 0 24px rgba(var(--accent-rgb), 0.12); }
 .btn-line:hover::before { transform: scaleX(1); }
 
 .btn-arrow {

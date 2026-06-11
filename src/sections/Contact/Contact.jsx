@@ -1,5 +1,6 @@
 import styles from './Contact.module.css';
 import { Magnetic } from '../../components/Magnetic/Magnetic';
+import { Icon } from '../../components/Icon/Icon';
 
 export function Contact() {
   return (
@@ -18,17 +19,17 @@ export function Contact() {
         <div className={`${styles.socialRow} reveal rd1`}>
           <Magnetic strength={0.35}>
             <a href="https://www.linkedin.com/in/bahaa-hamed-9424111a9" target="_blank" rel="noopener noreferrer" className={styles.socialBtn} title="LinkedIn">
-              <i className="fab fa-linkedin-in" />
+              <Icon name="linkedin" size={20} />
             </a>
           </Magnetic>
           <Magnetic strength={0.35}>
             <a href="https://github.com/eyepat" target="_blank" rel="noopener noreferrer" className={styles.socialBtn} title="GitHub">
-              <i className="fab fa-github" />
+              <Icon name="github" size={20} />
             </a>
           </Magnetic>
           <Magnetic strength={0.35}>
             <a href="/Bahaa_Hamed_CV_EN.pdf" download className={styles.socialBtn} title="Download CV">
-              <i className="fas fa-download" />
+              <Icon name="download" size={20} />
             </a>
           </Magnetic>
         </div>

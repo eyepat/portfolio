@@ -23,7 +23,7 @@ export function TiltCard({ children, className = '', liftAmount = -6 }) {
       const rY = -(dx / cx) * 9;
       card.style.transform = `perspective(900px) rotateX(${rX}deg) rotateY(${rY}deg) translateY(${liftAmount}px)`;
       if (flash) {
-        flash.style.background = `radial-gradient(circle at ${e.clientX - r.left}px ${e.clientY - r.top}px, rgba(0,229,204,.09) 0%, transparent 52%)`;
+        flash.style.background = `radial-gradient(circle at ${e.clientX - r.left}px ${e.clientY - r.top}px, rgba(var(--accent-rgb), 0.09) 0%, transparent 52%)`;
       }
     };
 

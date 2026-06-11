@@ -1,0 +1,22 @@
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: conic-gradient(from 40deg, var(--color-accent), var(--color-accent2), var(--color-accent));
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s;
+}
+
+.btn:hover .swatch {
+  transform: scale(1.25) rotate(140deg);
+  box-shadow: 0 0 14px rgba(var(--accent-rgb), 0.5);
+}

@@ -1,0 +1,112 @@
+﻿.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 0 30px;
+}
+
+.track,
+.fill {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+}
+
+.track { background: var(--color-border); }
+
+.fill {
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent2));
+  transform: scaleY(0);
+  transform-origin: top;
+  box-shadow: 0 0 14px rgba(var(--accent-rgb), 0.35);
+}
+
+.item {
+  position: relative;
+  width: 50%;
+  padding: 0 56px 72px 0;
+  text-align: right;
+}
+
+.item:nth-child(odd) {
+  margin-left: 50%;
+  padding: 0 0 72px 56px;
+  text-align: left;
+}
+
+.item:last-child { padding-bottom: 0; }
+
+.dot {
+  position: absolute;
+  top: 6px;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  z-index: 1;
+  transition: border-color 0.4s, background 0.4s, box-shadow 0.4s;
+}
+
+.item:nth-child(odd) .dot { right: auto; left: -8px; }
+
+.item.on .dot {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.55);
+}
+
+.card { transition: opacity 0.4s; }
+.item:not(.on) .card { opacity: 0.45; }
+
+.year {
+  display: inline-block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-body);
+  max-width: 380px;
+  display: inline-block;
+}
+
+@media (max-width: 1024px) {
+  .track,
+  .fill { left: 8px; margin-left: 0; }
+
+  .item,
+  .item:nth-child(odd) {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 0 56px 44px;
+    text-align: left;
+  }
+
+  .dot,
+  .item:nth-child(odd) .dot { left: 1px; right: auto; }
+
+  .text { max-width: 520px; }
+  .title { font-size: 25px; }
+}

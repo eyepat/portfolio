@@ -1,4 +1,4 @@
-.card {
+﻿.card {
   background: var(--color-card2);
   border: 1px solid var(--color-border);
   border-radius: 8px;
@@ -10,7 +10,7 @@
   cursor: default;
 }
 
-.card:hover { box-shadow: 0 20px 48px rgba(0, 229, 204, 0.09); }
+.card:hover { box-shadow: 0 20px 48px rgba(var(--accent-rgb), 0.09); }
 
 .icon {
   font-size: 28px;

@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Nav.module.css';
+import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 
 const NAV_LINKS = [
   { href: '#home',     id: 'home',     label: 'Home'    },
   { href: '#about',    id: 'about',    label: 'About'   },
+  { href: '#journey',  id: 'journey',  label: 'Journey' },
   { href: '#projects', id: 'projects', label: 'Work'    },
   { href: '#skills',   id: 'skills',   label: 'Skills'  },
   { href: '#contact',  id: 'contact',  label: 'Contact' },
@@ -52,13 +54,16 @@ export function Nav({ activeSection }) {
           ))}
         </ul>
 
-        <button
-          className={`${styles.burger} ${open ? styles.open : ''}`}
-          onClick={() => setOpen(o => !o)}
-          aria-label="Toggle navigation"
-        >
-          <span /><span /><span />
-        </button>
+        <div className={styles.actions}>
+          <ThemeSwitcher />
+          <button
+            className={`${styles.burger} ${open ? styles.open : ''}`}
+            onClick={() => setOpen(o => !o)}
+            aria-label="Toggle navigation"
+          >
+            <span /><span /><span />
+          </button>
+        </div>
       </div>
     </nav>
   );

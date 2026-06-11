@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { TiltCard } from '../../components/TiltCard/TiltCard';
+import { Icon } from '../../components/Icon/Icon';
 import styles from './Skills.module.css';
 
 export function SkillCategory({ category }) {
@@ -7,7 +8,7 @@ export function SkillCategory({ category }) {
 
   return (
     <TiltCard className={`${styles.card} reveal ${delay}`} liftAmount={-6}>
-      <i className={`${styles.icon} ${icon}`} />
+      <Icon name={icon} size={26} className={styles.icon} />
       <div className={styles.name}>{name}</div>
       <div className={styles.list}>{skills}</div>
     </TiltCard>

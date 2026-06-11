@@ -1,9 +1,11 @@
 import { SkillCategory } from './SkillCategory';
 import { SKILL_CATEGORIES } from './skills.data';
+import { GhostTitle } from '../../components/GhostTitle/GhostTitle';
 
 export function Skills() {
   return (
     <section className="sec sec-dark" id="skills">
+      <GhostTitle text="SKILLS" direction={-1} />
       <div className="wrap">
         <div className="chip reveal">Skills</div>
         <div className="split">
