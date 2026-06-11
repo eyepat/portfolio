@@ -57,6 +57,10 @@ Interactive effects live in `src/components/` (Ambience, Particles, Cursor, Tilt
 - Stats numbers are inline in `Stats.jsx` / `About.jsx` as `{ value, suffix }` fed to `CountUp`.
 - CV PDF is `public/Bahaa_Hamed_CV_EN.pdf`, linked from `Contact.jsx`.
 
+### Terminal easter egg
+
+`src/components/Terminal/Terminal.jsx` is a Quake-style drop-down console on the main page, toggled by the `` ` ``/`~` key or a `terminal-toggle` window event (dispatched by the footer `>_` button). Commands live in its `runCommand` switch; it imports `PROJECTS` and the theme helpers, so new projects/themes show up automatically.
+
 ### Custom cursor
 
 `body { cursor: none }` globally; `Cursor` renders a dot + lerped ring. Hover targets are detected via `closest('a, button, [data-tilt]')` toggling `body.ch` — `TiltCard` sets `data-tilt`, so anything wrapped in it gets the enlarged cursor for free.

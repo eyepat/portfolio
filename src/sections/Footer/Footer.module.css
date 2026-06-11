@@ -15,6 +15,25 @@
 
 .left, .right { font-size: 13px; color: var(--color-body); }
 
+.term {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-body);
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.term:hover {
+  color: var(--color-accent);
+  border-color: rgba(var(--accent-rgb), 0.5);
+  box-shadow: 0 0 16px rgba(var(--accent-rgb), 0.15);
+}
+
 @media (max-width: 1024px) {
   .inner { padding: 0 var(--layout-pad-sm); flex-direction: column; gap: 10px; text-align: center; }
 }

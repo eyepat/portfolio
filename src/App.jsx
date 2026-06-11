@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Cursor } from './components/Cursor/Cursor';
 import { Ambience } from './components/Ambience/Ambience';
 import { Preloader } from './components/Preloader/Preloader';
+import { Terminal } from './components/Terminal/Terminal';
 import { Nav }    from './components/Nav/Nav';
 import { Marquee } from './components/Marquee/Marquee';
 import { Hero }    from './sections/Hero/Hero';
@@ -45,6 +46,7 @@ export default function App() {
       {!introGone && <Preloader lifting={lifting} />}
       <Cursor />
       <Ambience />
+      <Terminal />
       {ready && (
         <>
           <Nav activeSection={activeSection} />
