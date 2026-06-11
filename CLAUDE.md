@@ -15,7 +15,7 @@ No test suite. Deployed on Vercel (framework preset: Vite, output `dist/`); push
 
 ## Architecture
 
-Single-page React 19 + Vite portfolio. No router, no state library, no UI framework — sections stack in `src/App.jsx` and anchor links (`#home`, `#about`, `#projects`, `#skills`, `#contact`) drive navigation.
+Single-page React 19 + Vite portfolio. No router, no state library, no UI framework — sections stack in `src/App.jsx` and anchor links (`#home`, `#about`, `#journey`, `#projects`, `#skills`, `#contact`) drive navigation. Live at https://portfolio-mu-weld-72.vercel.app (also referenced by the OG tags in `index.html` — update those if the domain changes).
 
 ### Render gating (App.jsx)
 
@@ -26,15 +26,18 @@ Single-page React 19 + Vite portfolio. No router, no state library, no UI framew
 
 ### Styling: CSS Modules + three global sheets
 
-Component styles are CSS Modules (`X.module.css` next to `X.jsx`). Three global sheets in `src/styles/` are imported once in `main.jsx`:
+Component styles are CSS Modules (`X.module.css` next to `X.jsx`). Global sheets in `src/styles/` are imported once in `main.jsx`:
 
-- `base.css` — design tokens as CSS variables (`--color-accent: #00e5cc`, layout vars), scrollbar/selection.
+- `fonts.css` — self-hosted `@font-face` (woff2 in `public/fonts/`; Inter is a single variable file covering weights 300–600). No font/icon CDNs.
+- `base.css` — design tokens as CSS variables, scrollbar/selection. Accents are RGB triplets (`--accent-rgb`, `--accent2-rgb`) so any alpha derives via `rgba(var(--accent-rgb), X)` — never hardcode the teal; the theme switcher rewrites these triplets.
 - `components.css` — global utility classes used as plain strings in JSX: `sec`, `sec-dark`, `wrap`, `chip`, `split*`, `btn-fill`, `btn-line`, `btn-arrow`, `teal`, `ghost`, and the scroll-reveal classes `reveal` / `rd1`–`rd3` (delays).
 - `animations.css` — shared keyframes and the global `prefers-reduced-motion` kill-switch (zeroes all animation/transition durations — but NOT animation-delays, so JS-driven effects must check the media query themselves).
 
 Scroll reveal protocol: put `reveal` (plus optional `rd1`–`rd3`) on an element; `useScrollReveal` adds the global `visible` class on intersection. Module CSS can hook this via `:global`, e.g. `.row:global(.visible) .tag` in `Projects.module.css` for staggered child reveals.
 
-Fonts (Barlow Condensed for display, Inter for body) and Font Awesome icons load from CDNs in `index.html`.
+Icons are inline SVGs via `src/components/Icon/Icon.jsx` (path data from Font Awesome Free, sized by prop, colored by `currentColor`). Add new icons to its `ICONS` map rather than reintroducing an icon font.
+
+Theming: `src/components/ThemeSwitcher/themes.js` holds the accent palettes and `applyTheme()`; `main.jsx` applies the saved theme before render (localStorage `accent-theme`). `applyTheme` dispatches a `themechange` window event — canvas/JS effects that cache a color (e.g. Particles) must listen for it.
 
 ### Effect components conventions
 
