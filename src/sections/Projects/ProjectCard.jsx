@@ -1,15 +1,72 @@
+import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Projects.module.css';
+import { TiltCard } from '../../components/TiltCard/TiltCard';
 
 export function ProjectCard({ project }) {
   const { num, badge, status, title, description, tags, githubUrl, image, imageAlt, reversed } = project;
+  const imgRef  = useRef(null);
+  const chipRef = useRef(null);
+
+  // scroll parallax: the image drifts inside its frame as the row crosses the viewport
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const img = imgRef.current;
+    let raf = null;
+
+    const update = () => {
+      raf = null;
+      const r  = img.parentElement.getBoundingClientRect();
+      const vh = window.innerHeight;
+      if (r.bottom < 0 || r.top > vh) return;
+      const p = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2);
+      img.style.transform = `scale(1.14) translateY(${p * -4}%)`;
+    };
+
+    const onScroll = () => { if (raf == null) raf = requestAnimationFrame(update); };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (raf != null) cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  const onChipMove = e => {
+    const chip = chipRef.current;
+    if (!chip) return;
+    const r = e.currentTarget.getBoundingClientRect();
+    chip.style.left = `${e.clientX - r.left}px`;
+    chip.style.top  = `${e.clientY - r.top}px`;
+  };
+
+  const imgFrame = (
+    <div className={styles.imgWrap} onMouseMove={githubUrl ? onChipMove : undefined}>
+      <img ref={imgRef} src={image} alt={imageAlt} loading="lazy" />
+      {githubUrl && <span ref={chipRef} className={styles.viewChip}>VIEW&nbsp;↗</span>}
+    </div>
+  );
 
   return (
     <div className={`${styles.row} ${reversed ? styles.rev : ''} reveal`}>
       <div className={styles.imgCol}>
-        <div className={styles.imgWrap}>
-          <img src={image} alt={imageAlt} loading="lazy" />
-        </div>
+        <TiltCard className={styles.tilt} liftAmount={0}>
+          {githubUrl ? (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.imgLink}
+              aria-label={`Open ${title} on GitHub`}
+            >
+              {imgFrame}
+            </a>
+          ) : imgFrame}
+        </TiltCard>
       </div>
 
       <div className={styles.textCol}>
