@@ -72,6 +72,7 @@ export function Hero() {
         <div className={styles.photo} ref={photoRef}>
           <div className={styles.portrait}>
             <img src="/assets/img/photo.png" alt="Bahaa Hamed" className={styles.portraitImg} />
+            <img src="/assets/img/photo.png" alt="" aria-hidden="true" className={styles.portraitTint} />
             <span className={styles.photoRing} />
           </div>
         </div>

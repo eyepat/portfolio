@@ -232,8 +232,30 @@
   object-fit: cover;
   object-position: center top;
   display: block;
+}
+
+/* Hue-rotated copy masked to the photo's teal-graded areas only, so skin
+   tones (lips) keep their natural color when the theme changes. The mask
+   PNG has the same dimensions as photo.png; mask-size/position below must
+   mirror the img's object-fit/position so the layers stay aligned. */
+.portraitTint {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  pointer-events: none;
   filter: hue-rotate(var(--photo-hue, 0deg));
   transition: filter 0.5s ease;
+  -webkit-mask-image: url('/assets/img/photo-tealmask.png');
+  mask-image: url('/assets/img/photo-tealmask.png');
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center top;
+  mask-position: center top;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 .scrollHint {
