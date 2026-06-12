@@ -13,6 +13,8 @@ html { scroll-behavior: smooth; font-size: 18px; }
   --color-accent-08: rgba(var(--accent-rgb), 0.08);
   --color-accent-15: rgba(var(--accent-rgb), 0.15);
   --color-accent-25: rgba(var(--accent-rgb), 0.25);
+  /* Rotates the hero photo's baked-in teal grade toward the active accent */
+  --photo-hue:       0deg;
   --color-white:     #ffffff;
   --color-body:      #a0a0a0;
   --color-border:    rgba(255, 255, 255, 0.07);

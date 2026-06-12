@@ -232,6 +232,8 @@
   object-fit: cover;
   object-position: center top;
   display: block;
+  filter: hue-rotate(var(--photo-hue, 0deg));
+  transition: filter 0.5s ease;
 }
 
 .scrollHint {
