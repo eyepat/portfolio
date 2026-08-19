@@ -92,6 +92,12 @@
   justify-content: center;
   color: var(--color-accent);
   font-size: 20px;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  padding: 0;
+  cursor: none;
   transition: background 0.3s, border-color 0.3s, transform 0.25s;
 }
 .socialBtn:hover {
