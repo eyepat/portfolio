@@ -25,7 +25,7 @@ function runCommand(raw, { close }) {
         line('out', '  projects      list my work'),
         line('out', '  skills        what I know'),
         line('out', '  archivon      open the Archivon case study'),
-        line('out', '  cv            download my CV'),
+        line('out', '  cv <en|sv>    download my CV (english | swedish)'),
         line('out', '  contact       how to reach me'),
         line('out', `  theme <name>  ${THEMES.map(t => t.name.toLowerCase()).join(' | ')}`),
         line('out', `  goto <section> ${SECTIONS.join(' | ')}`),
@@ -64,9 +64,16 @@ function runCommand(raw, { close }) {
       window.open('/archivon.html', '_self');
       return [line('out', 'opening case study…')];
 
-    case 'cv':
-      window.open('/Bahaa_Hamed_CV_EN.pdf', '_blank');
-      return [line('out', 'downloading CV…')];
+    case 'cv': {
+      const lang = arg === 'sv' || arg === 'swedish' ? 'sv'
+        : arg === 'en' || arg === 'english' ? 'en'
+        : null;
+      if (!lang) {
+        return [line('out', 'usage: cv <en|sv>  (english | swedish)')];
+      }
+      window.open(lang === 'sv' ? '/Bahaa_Hamed_CV_SV.pdf' : '/Bahaa_Hamed_CV_EN.pdf', '_blank');
+      return [line('out', `downloading ${lang === 'sv' ? 'Swedish' : 'English'} CV…`)];
+    }
 
     case 'contact':
       return [
