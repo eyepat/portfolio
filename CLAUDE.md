@@ -55,7 +55,7 @@ Interactive effects live in `src/components/` (Ambience, Particles, Cursor, Tilt
 - Projects: `src/sections/Projects/projects.data.js` (images under `public/projects/` and `public/assets/img/`).
 - Skills: `src/sections/Skills/skills.data.js`.
 - Stats numbers are inline in `Stats.jsx` / `About.jsx` as `{ value, suffix }` fed to `CountUp`.
-- CV PDF is `public/Bahaa_Hamed_CV_EN.pdf`, linked from `Contact.jsx`.
+- CV PDFs: `public/Bahaa_Hamed_CV_EN.pdf` (English) and `public/Bahaa_Hamed_CV_SV.pdf` (Swedish). The `Contact.jsx` download button opens a small language popover (English / Svenska), and the Terminal `cv <en|sv>` command downloads the matching file. Both links set an explicit `download="…"` filename. To update a CV, replace the file in `public/` keeping the same name — no code changes needed.
 
 ### Terminal easter egg
 
