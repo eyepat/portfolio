@@ -60,10 +60,10 @@ export function Contact() {
             </Magnetic>
             {cvOpen && (
               <div className={styles.cvMenu} role="menu">
-                <a href="/Bahaa_Hamed_CV_EN.pdf" download role="menuitem" onClick={() => setCvOpen(false)}>
+                <a href="/Bahaa_Hamed_CV_EN.pdf" download="Bahaa_Hamed_CV_EN.pdf" role="menuitem" onClick={() => setCvOpen(false)}>
                   English
                 </a>
-                <a href="/Bahaa_Hamed_CV_SV.pdf" download role="menuitem" onClick={() => setCvOpen(false)}>
+                <a href="/Bahaa_Hamed_CV_SV.pdf" download="Bahaa_Hamed_CV_SV.pdf" role="menuitem" onClick={() => setCvOpen(false)}>
                   Svenska
                 </a>
               </div>
